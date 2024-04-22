@@ -130,7 +130,37 @@ In this part of the system, the Reader model has several important tasks:
 
 * Generating the Answer: The  Reader uses a powerful language model (HuggingFaceH4/zephyr-7b-beta: https://huggingface.co/HuggingFaceH4/zephyr-7b-beta in the below example) to generate a text-based answer that addresses the user's query.
 
-Code Explanation
+Code & Explanation
+
+```python
+from transformers import pipeline
+import torch
+from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
+
+reader_model = "HuggingFaceH4/zephyr-7b-beta" #works well
+
+
+bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_use_double_quant=True,
+    bnb_4bit_quant_type="nf4",
+    bnb_4bit_compute_dtype=torch.bfloat16,
+)
+model = AutoModelForCausalLM.from_pretrained(
+    reader_model, quantization_config=bnb_config
+)
+tokenizer = AutoTokenizer.from_pretrained(reader_model)
+
+llm_reader= pipeline(
+    model=model,
+    tokenizer=tokenizer,
+    task="text-generation",
+    do_sample=True,
+    temperature=0.5,#Controls randomness in the generated text, higher temperature in text generation models leads to more creative and unpredictable output
+    repetition_penalty=1.1,#enalizes the model for repeating phrases or sequences too often.
+    return_full_text=False,#Specifies whether to return the full generated text including the input prompt.
+    max_new_tokens=500,#Limits the maximum number of tokens (roughly words or word pieces) the model can generate
+```
 
 * reader_model: Specifies the language model used by the Reader. For performance, it can be valuable to experiment with smaller or quantized models.
 * BitsAndBytesConfig: Configures quantization, which can dramatically speed up inference by reducing the model's memory footprint.
