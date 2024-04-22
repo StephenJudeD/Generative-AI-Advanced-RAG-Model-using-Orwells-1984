@@ -23,7 +23,7 @@ Let’s jump in!
 
 ## Key Findings
 
-![Flow Chart](./Images/1984_book.jfif)
+![Flow Chart](./Images/What steps should we take as a society to avoid the political and social situation presented in this book..JPG)
 ---
 
 ### Question = "Tell me a joke?" (to verify the RAG model, ask an indirect question)
