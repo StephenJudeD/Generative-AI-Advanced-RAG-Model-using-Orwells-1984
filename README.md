@@ -120,10 +120,44 @@ Histogram:
 Overall, this distribution seems well-suited for a system that retrieves information from short, well-defined chunks of text. The majority of chunks fall within a predictable range, allowing for efficient retrieval.
 
 
-## Model Training
-- Instructions on how to train the RAG model using the preprocessed data.
-- Tips on monitoring and improving model performance.
+## The Reader: Translating Retrieved Text into an Answer
 
-## Inference
-- How to use the trained RAG model to answer questions about "1984".
-- Examples of inference using the model.
+In this part of the system, the Reader model has several important tasks:
+
+* Processing Retrieved Information: The system gathers relevant documents (the 'context') based on the user's query. The Reader processes and potentially compresses these documents to create a manageable input for the next step.
+
+* Crafting a Precise Prompt: The Reader combines the processed context with the user's original query into a well-structured prompt. This prompt guides the language model's answer generation.
+
+* Generating the Answer: The  Reader uses a powerful language model (HuggingFaceH4/zephyr-7b-beta: https://huggingface.co/HuggingFaceH4/zephyr-7b-beta in the below example) to generate a text-based answer that addresses the user's query.
+
+Code Explanation
+
+* reader_model: Specifies the language model used by the Reader. For performance, it can be valuable to experiment with smaller or quantized models.
+* BitsAndBytesConfig: Configures quantization, which can dramatically speed up inference by reducing the model's memory footprint.
+* AutoModelForCausalLM.from_pretrained(...): Loads the language model, applying the quantization configuration for efficiency.
+* AutoTokenizer.from_pretrained(...): Loads the matching tokenizer, ensuring the text input is correctly formatted for the language model.
+pipeline(...): Creates the reader pipeline, encapsulating the model, tokenizer, and generation parameters. This provides a simple interface for generating answers based on new queries.
+
+Why is the Reader Important?
+
+* Contextualization: The Reader enables the system to use the most relevant knowledge to answer the user's query, rather than relying on the language model's general knowledge alone.
+* Focused Generation: The Reader crafts a prompt that guides the language model towards the specific answer the user is seeking.
+
+## The Prompt
+
+This Pis a conversational prompt in the format required for RAG (Retrieve, Add, Generate) models. 
+
+The prompt consists of two parts:
+
+System Message:
+Role: "system"
+Content: A system message instructing the user to answer the question directly and concisely based on the provided context from "1984". If the question cannot be answered from the context, the system message directs the user to indicate so, but in a curt manner using few words.
+
+---
+
+User Message:
+Role: "user"
+Content: A user message containing the context from "1984" (limited to approximately 2000 tokens) followed by a separator "---" and the actual question.
+The prompt_template_rag variable stores the template after applying it to the tokenizer. The apply_chat_template() function converts the template into a format suitable for RAG models, ensuring appropriate tokenization and the addition of a generation prompt.
+
+The resulting prompt_template_rag is ready to be used with RAG models for context-based question answering.
