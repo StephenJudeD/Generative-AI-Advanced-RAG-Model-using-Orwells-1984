@@ -79,7 +79,7 @@ def preprocess_1984_from_text(text):
 
 
 
-# Text Splitting Logic
+## Text Splitting Logic
 
 This code snippet defines a Python function `split_text()` that splits input text into smaller chunks with a specified size and overlap. The purpose of this function is to preprocess large text documents for language processing tasks, enabling more efficient analysis.
 
@@ -91,6 +91,31 @@ The `split_text()` function takes three parameters:
 - `chunk_overlap` (default: 100): The amount of overlap between consecutive chunks.
 
 The function splits the input text into chunks of the specified size, ensuring that each chunk overlaps with the previous one by the specified overlap amount. This approach helps maintain continuity between chunks and prevents important information from being split across chunks.
+
+## Retriever - Embeddings
+
+Token Lengths:
+* In natural language processing (NLP), a token refers to a unit of text, such as a word or subword. Tokenization involves breaking down a sentence or document into these smaller units.
+* The code calculates the lengths of tokens in a set of processed documents. Specifically, it computes the number of tokens in each document.
+
+
+Purpose:
+Understanding the distribution of token lengths is important for several reasons:
+* Model Input Constraints: Many NLP models have a maximum input length (measured in tokens). If a document exceeds this limit, it must be truncated or split.
+* Efficiency: Longer documents require more computational resources during training and inference.
+Data Exploration: Analyzing token lengths helps researchers understand the characteristics of their text data.
+
+Code Explanation:
+
+The code below performs the following steps:
+* Initializes a tokenizer using the pretrained model “thenlper/gte-large”.
+* Computes the token lengths for each document in the docs_processed list.
+* Creates a histogram to visualize the distribution of token lengths.
+
+Histogram:
+The histogram shows the frequency of different token lengths. It helps identify patterns, such as whether most documents are short or long.
+The x-axis represents token lengths, and the y-axis represents the number of documents with that length.
+
 
 ## Model Training
 - Instructions on how to train the RAG model using the preprocessed data.
