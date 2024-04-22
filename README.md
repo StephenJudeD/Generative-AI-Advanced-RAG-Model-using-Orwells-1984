@@ -29,8 +29,68 @@ Focus on Conversation: Zephyr 7B Gemma is specifically fine-tuned for conversati
 ![Flow Chart](./1984.jpg)
 
 ## Preprocessing
-- Detailed explanation of the preprocessing function for the text data.
-- Example output of the preprocessing step, showcasing the extracted chapters and parts from "1984".
+
+To extract chapters and parts from George Orwell's "1984," we use the following Python function:
+
+```python
+import re
+
+def preprocess_1984_from_text(text):
+    chapters = []
+    current_part = None
+    chapter_title = None
+    chapter_text = []
+
+    for line in text.splitlines():
+        line = line.strip()
+
+        # Detect part heading (unmodified)
+        part_match = re.match(r"PART (\w+)", line)
+        if part_match:
+            current_part = part_match.group(1)
+
+        # Detect chapter titles with numbers only
+        chapter_match = re.match(r"^Chapter (\d+)$", line)
+        if chapter_match:
+            # Store previous chapter (if any)
+            if chapter_title:
+                chapters.append({
+                    "part": current_part,
+                    "title": chapter_title,
+                    "text": ' '.join(chapter_text)
+                })
+
+            chapter_title = "Chapter " + chapter_match.group(1).strip()
+            chapter_text = []
+
+        else:  # It's regular text content
+            chapter_text.append(line)
+
+    # Store the last chapter
+    if chapter_title:
+        chapters.append({
+            "part": current_part,
+            "title": chapter_title,
+            "text": ' '.join(chapter_text)
+        })
+
+    return chapters
+```
+
+
+
+# Text Splitting Logic
+
+This code snippet defines a Python function `split_text()` that splits input text into smaller chunks with a specified size and overlap. The purpose of this function is to preprocess large text documents for language processing tasks, enabling more efficient analysis.
+
+## Function Description
+
+The `split_text()` function takes three parameters:
+- `text`: The input text to be split into chunks.
+- `chunk_size` (default: 1000): The desired size of each chunk.
+- `chunk_overlap` (default: 100): The amount of overlap between consecutive chunks.
+
+The function splits the input text into chunks of the specified size, ensuring that each chunk overlaps with the previous one by the specified overlap amount. This approach helps maintain continuity between chunks and prevents important information from being split across chunks.
 
 ## Model Training
 - Instructions on how to train the RAG model using the preprocessed data.
