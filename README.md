@@ -19,9 +19,23 @@ George Orwell’s dystopian masterpiece is rich in themes, symbolism, and though
 Let’s jump in!
 
 
-## Flow Chart
-![Political](./1984.jpg)
-
 ## Key Findings
 
 Focus on Conversation: Zephyr 7B Gemma is specifically fine-tuned for conversation tasks. This means it's better at understanding the nuances of natural language and generating coherent responses to questions. This is crucial for a RAG model that needs to interpret user queries and translate them into retrieving relevant information and formulating an answer.
+
+# Steps Involved
+
+## Flow Chart
+![Flow Chart](./1984.jpg)
+
+## Preprocessing
+- Detailed explanation of the preprocessing function for the text data.
+- Example output of the preprocessing step, showcasing the extracted chapters and parts from "1984".
+
+## Model Training
+- Instructions on how to train the RAG model using the preprocessed data.
+- Tips on monitoring and improving model performance.
+
+## Inference
+- How to use the trained RAG model to answer questions about "1984".
+- Examples of inference using the model.
