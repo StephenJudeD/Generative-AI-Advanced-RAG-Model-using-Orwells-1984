@@ -175,7 +175,7 @@ Why is the Reader Important?
 
 ## The Prompt
 
-This Pis a conversational prompt in the format required for RAG (Retrieve, Add, Generate) models. 
+This is a conversational prompt in the format required for RAG (Retrieve, Add, Generate) models. 
 
 The prompt consists of two parts:
 
@@ -193,5 +193,25 @@ Content: A user message containing the context from "1984" (limited to approxima
 The prompt_template_rag variable stores the template after applying it to the tokenizer. The apply_chat_template() function converts the template into a format suitable for RAG models, ensuring appropriate tokenization and the addition of a generation prompt.
 
 ---
+
+```python
+prompt_in_chat_format = [
+    {
+        "role": "system",
+        "content": """Using the provided context from '1984', answer the question directly and concisely. If the question cannot be answered from the context, indicate so, but in a curt manner using few words."""
+    },
+    {
+        "role": "user",
+        "content": """Context (limit to ~2000 tokens):
+{context}
+---
+Question: {question}""",
+    },
+]
+prompt_template_rag = tokenizer.apply_chat_template(
+    prompt_in_chat_format, tokenize=False, add_generation_prompt=True
+)
+print(prompt_template_rag)
+```
 
 The resulting prompt_template_rag is ready to be used with RAG models for context-based question answering.
