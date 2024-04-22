@@ -23,8 +23,8 @@ Let’s jump in!
 
 ## Key Findings
 
-Question = "What steps should we take as a society to avoid the political and social situation presented in this book?"
----
+### Question = "What steps should we take as a society to avoid the political and social situation presented in this book?"
+
 Answer: The text highlights several factors contributing to the political and social situation depicted in the book "1984." To avoid this scenario, society should address these underlying issues:
 
 1. Eliminate oppression: Society must ensure that individuals are not oppressed based on their identity, beliefs, or circumstances. This involves protecting fundamental rights such as freedom of speech, association, and religion, and preventing systemic forms of oppression like poverty, inequality, and prejudice.
@@ -42,6 +42,12 @@ Answer: The text highlights several factors contributing to the political and so
 7. Foster international cooperation: International cooperation and collaboration should be promoted to address global challenges such as climate change, pandemics, and conflict. This involves working together to find solutions that benefit all nations and peoples, rather than engaging in destructive competition or conflict.
 
 By addressing these underlying issues, society can create a more just, equitable, and prosperous future for all.
+
+---
+
+### Question = "Tell me a joke?" (to verify the RAG model, ask an indirect question)
+
+In the provided context, there is no direct request to tell a joke. If asked for a joke, Winston may not have any to share as the text does not indicate his sense of humor. However, if pressed, he might attempt to oblige, but it is uncertain whether his response would be humorous or not. In summary, there is no indication in the context that a joke will be told.
 
 # Steps Involved
 
