@@ -149,6 +149,8 @@ This Pis a conversational prompt in the format required for RAG (Retrieve, Add, 
 
 The prompt consists of two parts:
 
+---
+
 System Message:
 Role: "system"
 Content: A system message instructing the user to answer the question directly and concisely based on the provided context from "1984". If the question cannot be answered from the context, the system message directs the user to indicate so, but in a curt manner using few words.
@@ -159,5 +161,7 @@ User Message:
 Role: "user"
 Content: A user message containing the context from "1984" (limited to approximately 2000 tokens) followed by a separator "---" and the actual question.
 The prompt_template_rag variable stores the template after applying it to the tokenizer. The apply_chat_template() function converts the template into a format suitable for RAG models, ensuring appropriate tokenization and the addition of a generation prompt.
+
+---
 
 The resulting prompt_template_rag is ready to be used with RAG models for context-based question answering.
