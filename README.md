@@ -113,8 +113,16 @@ The code below performs the following steps:
 * Creates a histogram to visualize the distribution of token lengths.
 
 Histogram:
-The histogram shows the frequency of different token lengths. It helps identify patterns, such as whether most documents are short or long.
-The x-axis represents token lengths, and the y-axis represents the number of documents with that length.
+
+![Histo](./histogram.png)
+
+* Peaked Triangle Distribution:  The histogram has a triangular shape with a peak around 225 tokens. This suggests that most of the document chunks are clustered around this length, with a smaller number of chunks that are shorter or longer.
+
+* Chunk Size Influence: The peak at 225 tokens  reflects the size of text chunks created during the text-splitting stage in the code. If the chunk size was set to 1000 tokens with an overlap of 100 tokens, then this would explain the peak at 175 tokens (which is likely the most frequent chunk size after accounting for overlap).
+
+* Limited Lengths: The fact that the distribution tails off to the left and right suggests that there's a limit on the document lengths in the knowledge base. There aren't many documents that are much shorter than 100 tokens (5 bins to the left of the peak) or much longer than 300 tokens (8 bins to the right of the peak).
+
+Overall, this distribution seems well-suited for a system that retrieves information from short, well-defined chunks of text. The majority of chunks fall within a predictable range, allowing for efficient retrieval.
 
 
 ## Model Training
