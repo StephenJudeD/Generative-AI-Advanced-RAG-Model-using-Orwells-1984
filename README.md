@@ -21,11 +21,29 @@ George Orwell’s dystopian masterpiece is rich in themes, symbolism, and though
 Let’s jump in!
 
 
-## Key Findings
+## Key Findings - Lets start with some questions and then explain the process
 
 ![Flow Chart](./Images/steps.JPG)
+
+Process:
+
+* Knowledge Base: The answer leverages "1984" as a knowledge base to understand the characteristics and vulnerabilities of totalitarian regimes.
+* Threat Analysis: It identifies key threats to such regimes, including rising powerful individuals, a questioning ruling class, and a dissatisfied middle class.
+* Focus on Control: The answer recognizes the importance of controlling information and shaping public consciousness for a totalitarian regime's survival.
+* Solution Generation: Based on the analysis, the model proposes solutions that promote transparency, individual freedom, critical thinking, and a well-informed citizenry.
+
+Key Takeaways:
+* Preventing Manipulation: Transparency and access to information are crucial to prevent manipulation by an authoritarian government.
+* Empowering the People: Distributing power, fostering critical thinking, and addressing economic inequality empower people and make them less susceptible to control.
+* Importance of Education and Discourse: Education and open debate are vital tools to challenge propaganda and promote truth-seeking.
+* Democratic Safeguards: Strong democratic institutions and protection of human rights provide safeguards against the rise of totalitarian regimes.
+
 ---
 ![Flow Chart](./Images/Chelsea.JPG)
+
+* Limited Knowledge Base: Since the knowledge base for this RAG model is solely "1984", it lacks any information on sports, football leagues, or specific teams.
+* Focus on Text Content: The model is trained to analyze and answer questions based on the text it has been trained on.
+* Irrelevant Query: As "1984" doesn't contain any relevant information about football, the model wouldn't be able to provide a meaningful answer.
 ---
 ![Flow Chart](./Images/obrien.JPG)
 
