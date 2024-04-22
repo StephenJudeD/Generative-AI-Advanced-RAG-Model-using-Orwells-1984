@@ -240,11 +240,54 @@ The resulting prompt_template_rag is ready to be used with RAG models for contex
 
 ## The Fun Part - Asking Questions
 
+
+```python
+def answer_with_rag(
+    question: str,
+    llm: Pipeline,
+    knowledge_index: FAISS,
+    num_retrieved_docs: int = 30,
+    num_docs_final: int = 5,
+) -> Tuple[str, List[LangchainDocument]]:
+
+    """Retrieves relevant documents using a RAG model and generates an answer.
+
+    Args:
+        question: The query to be answered.
+        language_model: A Transformers RAG pipeline.
+        document_index: A FAISS index containing document vectors.
+        num_retrieved_docs: Maximum documents retrieved initially.
+        num_docs_final: Number of documents included in the final prompt.
+
+    Returns:
+        A tuple containing the generated answer and a list of relevant documents.
+    """
+    # Gather documents with retriever
+    print("=> Gathering Documents...")
+    relevant_docs = knowledge_index.similarity_search(
+        query=question, k=num_retrieved_docs
+    )
+    relevant_docs = [doc.page_content for doc in relevant_docs]  # keep only the text
+    relevant_docs = relevant_docs[:num_docs_final]
+
+    # Build the final prompt
+    context = "\nExtracted documents:\n"
+    context += "".join(
+        [f"Document {str(i)}:::\n" + doc for i, doc in enumerate(relevant_docs)]
+    )
+
+    final_prompt = prompt_template_rag.format(question=question, context=context)
+
+    # Redact an answer
+    print("=> Creating Answer...")
+    answer = llm(final_prompt)[0]["generated_text"]
+
+    return answer, relevant_docs
+```
+
 In order for the answers to print seamlessly in colab, the below code can be used.
 
 ```python
-from transformers import Pipeline
-
 def generate_answer():
     user_question = input("Enter the question: ")
     if user_question:
