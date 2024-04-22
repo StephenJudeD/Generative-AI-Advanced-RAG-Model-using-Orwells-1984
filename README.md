@@ -23,9 +23,25 @@ Let’s jump in!
 
 ## Key Findings
 
-![Flow Chart](./Images/2024.JPG)
+Question = "What steps should we take as a society to avoid the political and social situation presented in this book?"
+---
+Answer: The text highlights several factors contributing to the political and social situation depicted in the book "1984." To avoid this scenario, society should address these underlying issues:
 
-Focus on Conversation: Zephyr 7B Gemma is specifically fine-tuned for conversation tasks. This means it's better at understanding the nuances of natural language and generating coherent responses to questions. This is crucial for a RAG model that needs to interpret user queries and translate them into retrieving relevant information and formulating an answer.
+1. Eliminate oppression: Society must ensure that individuals are not oppressed based on their identity, beliefs, or circumstances. This involves protecting fundamental rights such as freedom of speech, association, and religion, and preventing systemic forms of oppression like poverty, inequality, and prejudice.
+
+2. Promote critical thinking: Education systems should encourage independent thinking, curiosity, and questioning of authority. This helps individuals develop a robust understanding of the world around them and resist manipulation and propaganda.
+
+3. Foster empathy: Society should promote empathy, compassion, and understanding among individuals. This involves fostering positive relationships within families, communities, and institutions, and addressing conflicts through dialogue and negotiation rather than violence and suppression.
+
+4. Encourage transparency and accountability: Institutions and leaders should be transparent in their decision-making processes and actions, and held accountable for their actions. This promotes trust, responsibility, and good governance.
+
+5. Address economic inequality: Economic inequality should be addressed through policies promoting inclusive growth, redistribution of resources, and access to opportunities for all. This ensures that everyone has access to basic needs, education, healthcare, and employment opportunities.
+
+6. Prioritize scientific and technological advancements: Society should prioritize scientific and technological advancements that benefit all members of society, rather than those that serve the interests of a privileged few. This includes investing in research and development, promoting innovation, and ensuring equitable access to technology and its benefits.
+
+7. Foster international cooperation: International cooperation and collaboration should be promoted to address global challenges such as climate change, pandemics, and conflict. This involves working together to find solutions that benefit all nations and peoples, rather than engaging in destructive competition or conflict.
+
+By addressing these underlying issues, society can create a more just, equitable, and prosperous future for all.
 
 # Steps Involved
 
@@ -263,3 +279,6 @@ def wrap_and_print(text, max_line_width):
 if __name__ == "__main__":
     generate_answer()
 ```
+
+![Flow Chart](./Images/2024.JPG)
+
