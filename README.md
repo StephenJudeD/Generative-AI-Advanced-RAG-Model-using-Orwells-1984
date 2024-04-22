@@ -219,3 +219,45 @@ print(prompt_template_rag)
 ```
 
 The resulting prompt_template_rag is ready to be used with RAG models for context-based question answering.
+
+## The Fun Part - Asking Questions
+
+In order for the answers to print seamlessly in colab, the below code can be used.
+
+```python
+from transformers import Pipeline
+
+def generate_answer():
+    user_question = input("Enter the question: ")
+    if user_question:
+        print("Generating answer...")
+        answer, relevant_docs = answer_with_rag(user_question, llm_reader, document_vector_store)
+
+        print("Answer:")
+        wrap_and_print(answer, max_line_width=100)  # Adjust '100' for desired line length
+
+        #print("\nRelevant Documents:")
+        #for i, doc in enumerate(relevant_docs):
+            #print(f"Document {i}")
+            #wrap_and_print(doc, max_line_width=60)
+
+def wrap_and_print(text, max_line_width):
+    lines = text.split('\n')  # Split into existing lines if any
+    for line in lines:
+        if len(line) > max_line_width:
+            words = line.split(' ')
+            current_line = ""
+            for word in words:
+                if len(current_line + " " + word) > max_line_width:
+                    print(current_line)
+                    current_line = word
+                else:
+                    current_line += " " + word
+            if current_line:  # Print the remaining part of the last line
+                print(current_line)
+        else:
+            print(line)
+
+if __name__ == "__main__":
+    generate_answer()
+```
