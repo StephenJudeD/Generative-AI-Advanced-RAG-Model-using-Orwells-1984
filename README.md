@@ -105,13 +105,6 @@ Understanding the distribution of token lengths is important for several reasons
 * Efficiency: Longer documents require more computational resources during training and inference.
 Data Exploration: Analyzing token lengths helps researchers understand the characteristics of their text data.
 
-Code Explanation:
-
-The code below performs the following steps:
-* Initializes a tokenizer using the pretrained model “thenlper/gte-large”.
-* Computes the token lengths for each document in the docs_processed list.
-* Creates a histogram to visualize the distribution of token lengths.
-
 Histogram:
 
 ![Histo](./histogram.png)
