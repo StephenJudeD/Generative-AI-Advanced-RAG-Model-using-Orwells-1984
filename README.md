@@ -335,5 +335,9 @@ if __name__ == "__main__":
     generate_answer()
 ```
 
-![Flow Chart](./Images/2024.JPG)
+![Flow Chart](./Images/synopsis.JPG)
+
+---
+
+![Flow Chart](./Images/trump_question.JPG)
 
