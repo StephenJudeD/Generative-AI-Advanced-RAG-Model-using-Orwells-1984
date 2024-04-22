@@ -60,7 +60,9 @@ Based on the provided context, it is impossible to answer this question as it ha
 # Steps Involved
 
 ## Flow Chart
-![Flow Chart](./Images/What steps should we take as a society to avoid the political and social situation presented in this book..JPG)
+![Flow Chart](./Images/1984.jpg)
+
+What steps should we take as a society to avoid the political and social situation presented in this book..JPG)
 
 ## Preprocessing
 
