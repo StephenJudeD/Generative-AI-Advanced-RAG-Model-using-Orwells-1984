@@ -23,7 +23,7 @@ Let’s jump in!
 
 ## Key Findings
 
-![Flow Chart](./Images/2024.jpg)
+![Flow Chart](./Images/2024.JPG)
 
 Focus on Conversation: Zephyr 7B Gemma is specifically fine-tuned for conversation tasks. This means it's better at understanding the nuances of natural language and generating coherent responses to questions. This is crucial for a RAG model that needs to interpret user queries and translate them into retrieving relevant information and formulating an answer.
 
