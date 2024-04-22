@@ -1,4 +1,4 @@
-# Generative AI: Building RAG-Model using Orwells 1984
+# Generative AI: Building a RAG-Model using Orwells 1984
 
 ![Flow Chart](./Images/1984_book.jfif)
 
