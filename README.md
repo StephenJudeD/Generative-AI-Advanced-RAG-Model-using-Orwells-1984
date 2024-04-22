@@ -26,7 +26,7 @@ Focus on Conversation: Zephyr 7B Gemma is specifically fine-tuned for conversati
 # Steps Involved
 
 ## Flow Chart
-![Flow Chart](./1984.jpg)
+![Flow Chart](./Images/1984.jpg)
 
 ## Preprocessing
 
