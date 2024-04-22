@@ -1,5 +1,7 @@
 # Generative AI: Building RAG-Model using Orwells 1984
 
+![Flow Chart](./Images/1984_book.jfif)
+
 ## Overview
 The goal? To construct an intelligent system that combines the strengths of both retrieval-based and generative approaches. This guides you through building a Retrieval-Augmented Generation (RAG) model, using  George Orwell's "1984" as the knowledge base.
 
@@ -107,7 +109,7 @@ Data Exploration: Analyzing token lengths helps researchers understand the chara
 
 Histogram:
 
-![Histo](./histogram.png)
+![Histo](./Images/histogram.png)
 
 * Peaked Triangle Distribution:  The histogram has a triangular shape with a peak around 225 tokens. This suggests that most of the document chunks are clustered around this length, with a smaller number of chunks that are shorter or longer.
 
