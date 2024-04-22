@@ -25,6 +25,9 @@ Let’s jump in!
 
 ![Flow Chart](./Images/steps.JPG)
 ---
+![Flow Chart](./Images/Chelsea.JPG)
+---
+![Flow Chart](./Images/obrien.JPG)
 
 ### Question = "Tell me a joke?" (to verify the RAG model, ask an indirect question)
 
