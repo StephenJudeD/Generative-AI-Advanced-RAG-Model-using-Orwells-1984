@@ -6,6 +6,8 @@
 The goal? To construct an intelligent system that combines the strengths of both retrieval-based and generative approaches. This guides you through building a Retrieval-Augmented Generation (RAG) model, using  George Orwell's "1984" as the knowledge base.
 
 * https://gutenberg.net.au/ebooks01/0100021h.html - link to open source book txt
+* https://huggingface.co/thenlper/gte-large - sentence trasnformer
+* https://huggingface.co/HuggingFaceH4/zephyr-7b-beta - LLM
 * Only the notebook is required to run all of the below, dependencies aside: 1984_advanced_rag_vFinal.ipynb
 
 
