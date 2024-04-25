@@ -438,4 +438,4 @@ This interface allows you to ask questions and receive answers. The conversation
 # With llm_reader, document_vector_store, and prompt_template_rag defined
 interactive_qa(llm_reader, document_vector_store)
 ```
-![Flow Chart](./Images/1984_book.png)
+Boom! Done
