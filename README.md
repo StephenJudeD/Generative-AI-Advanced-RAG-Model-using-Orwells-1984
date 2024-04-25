@@ -1,6 +1,6 @@
 # Generative AI: Building a RAG-Model using Orwells 1984
 
-![Flow Chart](./Images/1984_book.png)
+![Flow Chart](./Images/1984_book.jfif)
 
 ## Overview
 The goal? To construct an intelligent system that combines the strengths of both retrieval-based and generative approaches. This guides you through building a Retrieval-Augmented Generation (RAG) model, using  George Orwell's "1984" as the knowledge base.
