@@ -12,6 +12,15 @@ The goal? To construct an intelligent system that combines the strengths of both
 
 ## A few screenshots (to draw you in!)
 
+![Histo](./Images/nuance_1.JPG)
+
+![Histo](./Images/Newspeak_1.JPG)
+
+![Histo](./Images/chelsea_1.JPG)
+
+![Histo](./Images/french_1.JPG)
+
+
 ## Purpose
 * Enhancing Text Understanding:  AI can deepen our understanding of literature. By building RAG models, the aim is to extract relevant information from a large corpus of text and generate insightful answers to user queries.
 Seamless Integration of AI and Literature: AI companion that not only comprehends literary works but also engages in meaningful conversations about them, this project aims to bridge the gap between artificial intelligence and timeless literature.
