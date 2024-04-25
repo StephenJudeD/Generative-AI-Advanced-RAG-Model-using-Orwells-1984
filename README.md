@@ -5,6 +5,14 @@
 ## Overview
 The goal? To construct an intelligent system that combines the strengths of both retrieval-based and generative approaches. This guides you through building a Retrieval-Augmented Generation (RAG) model, using  George Orwell's "1984" as the knowledge base.
 
+Explanation of RAG Capabilities
+
+* Analysis of Text: The model can go beyond surface-level comprehension and identify deeper meanings within the narrative (e.g., identifying the significance of the missing sash in 1984).
+* Access to General Knowledge: The model can handle questions that go beyond the core knowledge base but are still related. It can access and process general information to answer broader queries (e.g., providing context about the French Revolution).
+* Identifying When Information is Missing: The model avoids making predictions based on insufficient data. It clarifies when there's no basis for an answer within the provided context (e.g., question about Chelsea's win).
+* Understanding Factual Content: The model demonstrates understanding of the text's concepts and their significance (e.g., explaining Newspeak and its impact on freedom of thought).
+* Integration of Knowledge: The model can connect concepts within the book (1984) to broader ideas and even provide real-world examples (e.g., connecting Newspeak to China's online censorship).
+
 * https://gutenberg.net.au/ebooks01/0100021h.html - link to open source book txt
 * https://huggingface.co/thenlper/gte-large - sentence trasnformer
 * https://huggingface.co/HuggingFaceH4/zephyr-7b-beta - LLM
@@ -12,13 +20,23 @@ The goal? To construct an intelligent system that combines the strengths of both
 
 ## A few screenshots (to draw you in!)
 
-![Histo](./Images/nuance_1.JPG)
-
 ![Histo](./Images/Newspeak_1.JPG)
 
+* Explanation: This showcases your RAG model's ability to answer factual questions directly related to the knowledge base (1984). It demonstrates understanding of the text's concepts and their significance. This shows the model can answer questions about the core content (1984) and explain concepts in detail. It also emphasizea how it connects the concept (Newspeak) to a broader idea (limited freedom of thought) and even provides a real-world example (China's online censorship).
+---
+![Histo](./Images/nuance_1.JPG)
+
+* Explanation: This showcases your RAG model's ability to analyze text and uncover deeper meanings. It demonstrates the model can go beyond surface-level comprehension and identify subtle nuances within the narrative.
+----
 ![Histo](./Images/chelsea_1.JPG)
 
+* Explanation: This demonstrates how your RAG model identifies questions that lack relevant information within the knowledge base. It avoids making predictions based on insufficient data.
+
+---
+
 ![Histo](./Images/french_1.JPG)
+
+* Explanation: This demonstrates your RAG model's capability to handle questions that go beyond the core knowledge base (1984) but are still related. It shows the model can access and process general information to answer broader queries.
 
 
 ## Purpose
