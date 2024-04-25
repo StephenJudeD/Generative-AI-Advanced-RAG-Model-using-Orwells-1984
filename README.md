@@ -16,7 +16,7 @@ Explanation of RAG Capabilities
 * https://gutenberg.net.au/ebooks01/0100021h.html - link to open source book txt
 * https://huggingface.co/thenlper/gte-large - sentence trasnformer
 * https://huggingface.co/HuggingFaceH4/zephyr-7b-beta - LLM
-* Only the notebook is required to run all of the below, dependencies aside: 1984_advanced_rag_vFinal.ipynb
+* Only the notebook is required to run all of the below, dependencies aside: Questions_redesign_1984_advanced_rag_v1.ipynb (please ecuse the name!)
 
 ## A few screenshots (to draw you in!)
 
