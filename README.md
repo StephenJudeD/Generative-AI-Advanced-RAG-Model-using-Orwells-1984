@@ -30,19 +30,20 @@ Let’s jump in!
 
 This demonstrates an interactive interface allowing users to ask questions and receive answers leveraging a Retriever-Augmented Generation (RAG) model. The RAG system is specifically focused on the content of the book "1984". Here, we showcase how the model tackles various question types:
 
-Questions related to 1984: These test the model's understanding of the book's plot, characters, and themes. (e.g., What are the two slogans displayed on the Ministry of Truth?)
-General Questions: These assess the model's ability to access and process information beyond the book. (e.g., What is the equation for the area of a circle?)
-Open Ended & Reasoning Questions: These evaluate the model's capacity to analyze and use its knowledge to answer. (e.g., How can Winston be Free?)
+* Questions related to 1984: These test the model's understanding of the book's plot, characters, and themes. (e.g., What are the two slogans displayed on the Ministry of Truth?)
+* General Questions: These assess the model's ability to access and process information beyond the book. (e.g., What is the equation for the area of a circle?)
+* Open Ended & Reasoning Questions: These evaluate the model's capacity to analyze and use its knowledge to answer. (e.g., How can Winston be Free?)
+
 Testing Methodology
 
 The conversation demonstrates how the model retrieves relevant passages from the book ("1984") when answering questions related to the text. It also highlights how the model integrates this retrieved knowledge with general information to answer broader questions. For instance, when asked about environmental challenges, the model clarifies it's not directly related to the book but offers relevant real-world information.
 
 This showcases the model's ability to:
 
-Access and process factual knowledge from the provided knowledge base (1984).
-Reason and analyze information to answer questions that require inference.
-Integrate knowledge from the book with general knowledge to answer broader questions.
-Understand the context of the question and respond accordingly.
+* Access and process factual knowledge from the provided knowledge base (1984).
+* Reason and analyze information to answer questions that require inference.
+* Integrate knowledge from the book with general knowledge to answer broader questions.
+* Understand the context of the question and respond accordingly.
 
 ## Questions asked for this session (please ask your own!)
 
