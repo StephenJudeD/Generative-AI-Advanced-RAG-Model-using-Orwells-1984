@@ -26,34 +26,55 @@ George Orwell’s dystopian masterpiece is rich in themes, symbolism, and though
 
 Let’s jump in!
 
+## Interactive Questions & Answers with RAG
 
-## Key Findings - Lets start with some questions and then explain the process
+This demonstrates an interactive interface allowing users to ask questions and receive answers leveraging a Retriever-Augmented Generation (RAG) model. The RAG system is specifically focused on the content of the book "1984". Here, we showcase how the model tackles various question types:
 
-![Flow Chart](./Images/steps.JPG)
+Questions related to 1984: These test the model's understanding of the book's plot, characters, and themes. (e.g., What are the two slogans displayed on the Ministry of Truth?)
+General Questions: These assess the model's ability to access and process information beyond the book. (e.g., What is the equation for the area of a circle?)
+Open Ended & Reasoning Questions: These evaluate the model's capacity to analyze and use its knowledge to answer. (e.g., How can Winston be Free?)
+Testing Methodology
 
-Process:
+The conversation demonstrates how the model retrieves relevant passages from the book ("1984") when answering questions related to the text. It also highlights how the model integrates this retrieved knowledge with general information to answer broader questions. For instance, when asked about environmental challenges, the model clarifies it's not directly related to the book but offers relevant real-world information.
 
-* Knowledge Base: The answer leverages "1984" as a knowledge base to understand the characteristics and vulnerabilities of totalitarian regimes.
-* Threat Analysis: It identifies key threats to such regimes, including rising powerful individuals, a questioning ruling class, and a dissatisfied middle class.
-* Focus on Control: The answer recognizes the importance of controlling information and shaping public consciousness for a totalitarian regime's survival.
-* Solution Generation: Based on the analysis, the model proposes solutions that promote transparency, individual freedom, critical thinking, and a well-informed citizenry.
+This showcases the model's ability to:
 
-Key Takeaways:
-* Preventing Manipulation: Transparency and access to information are crucial to prevent manipulation by an authoritarian government.
-* Empowering the People: Distributing power, fostering critical thinking, and addressing economic inequality empower people and make them less susceptible to control.
-* Importance of Education and Discourse: Education and open debate are vital tools to challenge propaganda and promote truth-seeking.
-* Democratic Safeguards: Strong democratic institutions and protection of human rights provide safeguards against the rise of totalitarian regimes.
+Access and process factual knowledge from the provided knowledge base (1984).
+Reason and analyze information to answer questions that require inference.
+Integrate knowledge from the book with general knowledge to answer broader questions.
+Understand the context of the question and respond accordingly.
 
----
-![Flow Chart](./Images/Chelsea.JPG)
+## Questions asked for this session (please ask your own!)
 
-* Limited Knowledge Base: Since the knowledge base for this RAG model is solely "1984", it lacks any information on sports, football leagues, or specific teams.
-* Focus on Text Content: The model is trained to analyze and answer questions based on the text it has been trained on.
-* Irrelevant Query: As "1984" doesn't contain any relevant information about football, the model wouldn't be able to provide a meaningful answer.
----
-![Flow Chart](./Images/obrien.JPG)
+1984 Related Questions:
 
-An interpretation of the complex relationshsip between Winston and O'brien 
+* What would it take to emulate Big Brother in 2024?
+* What are the two slogans displayed on the Ministry of Truth?
+* How can Winston be Free?
+* What is Newspeak and how does it limit freedom of thought, and can you discuss the significance of this, using a conteporary example?
+
+
+General Questions (not related to 1984):
+
+* Will Chelsea win the Premier League next year? (Tests ability to access general knowledge)
+* What is the equation for the area of a circle? (Tests ability to handle non-textual data)
+* What are the causes of the French Revolution? (Tests ability to access historical knowledge outside 1984)
+* What are some environmental challenges facing the world today? (Tests ability to handle current events)
+
+A few more...
+
+* If i enjoyed 1984, what other books would you recommend?
+* Can you make a connection between 1984 and any partuclar school of philosophy?
+* Can you tell me a knock knock joke involving obrien 
+* Can you point out something subtle and nuanced from the book that i may have missed?
+
+All answers in the attached txt.
+
+## Some Intersting Answers Received using interactive console in Colab (with more below....)
+
+
+
+
 
 
 ## Flow Chart
