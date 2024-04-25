@@ -275,7 +275,7 @@ Content:
 prompt_in_chat_format = [
     {
         "role": "system",
-        "content": """Using the provided context from '1984', answer the question directly and concisely. If the question cannot be answered from the context, indicate so, but in a curt manner using few words."""
+        "content": """Using the provided context from '1984', answer the question directly and concisely. If the question cannot be answered from the provided context, indicate so directly"""
     },
     {
         "role": "user",
@@ -288,7 +288,7 @@ Question: {question}""",
 prompt_template_rag = tokenizer.apply_chat_template(
     prompt_in_chat_format, tokenize=False, add_generation_prompt=True
 )
-print(prompt_template_rag)
+print(prompt_template_rag))
 ```
 
 The resulting prompt_template_rag is ready to be used with RAG models for context-based question answering.
