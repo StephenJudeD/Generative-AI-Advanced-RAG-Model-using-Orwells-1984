@@ -10,6 +10,7 @@ The goal? To construct an intelligent system that combines the strengths of both
 * https://huggingface.co/HuggingFaceH4/zephyr-7b-beta - LLM
 * Only the notebook is required to run all of the below, dependencies aside: 1984_advanced_rag_vFinal.ipynb
 
+## A few screenshots (to draw you in!)
 
 ## Purpose
 * Enhancing Text Understanding:  AI can deepen our understanding of literature. By building RAG models, the aim is to extract relevant information from a large corpus of text and generate insightful answers to user queries.
@@ -33,8 +34,6 @@ This demonstrates an interactive interface allowing users to ask questions and r
 * Questions related to 1984: These test the model's understanding of the book's plot, characters, and themes. (e.g., What are the two slogans displayed on the Ministry of Truth?)
 * General Questions: These assess the model's ability to access and process information beyond the book. (e.g., What is the equation for the area of a circle?)
 * Open Ended & Reasoning Questions: These evaluate the model's capacity to analyze and use its knowledge to answer. (e.g., How can Winston be Free?)
-
-Testing Methodology
 
 The conversation demonstrates how the model retrieves relevant passages from the book ("1984") when answering questions related to the text. It also highlights how the model integrates this retrieved knowledge with general information to answer broader questions. For instance, when asked about environmental challenges, the model clarifies it's not directly related to the book but offers relevant real-world information.
 
