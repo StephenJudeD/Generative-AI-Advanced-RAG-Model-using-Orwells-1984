@@ -79,12 +79,6 @@ A few more...
 
 All answers in the attached txt.
 
-## Some Intersting Answers Received using interactive console in Colab (with more below....)
-
-
-
-
-
 
 ## Flow Chart
 ![Flow Chart](./Images/1984.jpg)
@@ -283,8 +277,46 @@ The resulting prompt_template_rag is ready to be used with RAG models for contex
 
 ## The Fun Part - Asking Questions
 
+Introducing the code.
+
+The provided code defines several functions for creating an interactive question-answering system powered by a Retrieval-Augmented Generation (RAG) model. Here's a breakdown of each function:
+
+1. answer_with_rag(question, llm, knowledge_index, num_retrieved_docs, num_docs_final):
+
+This function takes a user question, a pre-trained RAG pipeline (llm), a knowledge base index (knowledge_index), and hyperparameters for document retrieval (num_retrieved_docs and num_docs_final).
+* It gathers relevant documents from the knowledge base using the similarity_search method based on the user question.
+* It then extracts only the text content (page_content) from the retrieved documents and limits the final set to num_docs_final.
+* It builds a final prompt for the RAG model by combining the user question with the context extracted from the relevant documents.
+* It uses the llm pipeline to generate an answer based on the final prompt.
+* Finally, it returns a tuple containing the generated answer and the list of relevant documents used.
+* 
+2. wrap_and_print(text, max_line_width):
+
+* This function takes text and a maximum line width (max_line_width).
+* It splits the text into lines based on existing newlines.
+* It iterates over each line and checks if it exceeds the max_line_width.
+* If a line is too long, it wraps the words to fit within the limit and prints each section.
+* This function helps ensure the output is formatted nicely and doesn't overflow the console width.
+* 
+3. interactive_qa(llm_reader, document_vector_store):
+
+* This function creates an interactive loop for users to ask questions.
+* It starts by printing a welcome message and initializing an empty list (conversation_history) to store the conversation turns.
+* It enters a loop that continues until the user types "quit".
+* Inside the loop, it prompts the user for a question and stores it in the conversation history.
+* It then calls the answer_with_rag function to retrieve an answer and relevant documents for the user question.
+* The answer and updated conversation history are stored.
+* The user question and answer are printed to the console with formatted line wrapping using wrap_and_print.
+* (Commented out section) Optionally, it could clear the previous output using ipython.display.clear_output.
+* Finally, after exiting the loop, it prints the complete conversation history.
+* Overall, this code demonstrates how to build an interactive question-answering system that leverages a RAG model to answer user questions. The RAG model retrieves relevant documents from a knowledge base and uses them to inform its answer generation process.
+
 
 ```python
+import pandas as pd  # Import pandas for DataFrame
+from transformers import Pipeline
+import IPython.display as ipd  # For optional output clearing (not used here)
+
 def answer_with_rag(
     question: str,
     llm: Pipeline,
@@ -297,7 +329,7 @@ def answer_with_rag(
 
     Args:
         question: The query to be answered.
-        language_model: A Transformers RAG pipeline.
+        llm: A Transformers RAG pipeline.
         document_index: A FAISS index containing document vectors.
         num_retrieved_docs: Maximum documents retrieved initially.
         num_docs_final: Number of documents included in the final prompt.
@@ -305,6 +337,7 @@ def answer_with_rag(
     Returns:
         A tuple containing the generated answer and a list of relevant documents.
     """
+
     # Gather documents with retriever
     print("=> Gathering Documents...")
     relevant_docs = knowledge_index.similarity_search(
@@ -326,30 +359,13 @@ def answer_with_rag(
     answer = llm(final_prompt)[0]["generated_text"]
 
     return answer, relevant_docs
-```
 
-In order for the answers to print seamlessly in colab, the below code can be used.
-
-```python
-def generate_answer():
-    user_question = input("Enter the question: ")
-    if user_question:
-        print("Generating answer...")
-        answer, relevant_docs = answer_with_rag(user_question, llm_reader, document_vector_store)
-
-        print("Answer:")
-        wrap_and_print(answer, max_line_width=100)  # Adjust '100' for desired line length
-
-        #print("\nRelevant Documents:")
-        #for i, doc in enumerate(relevant_docs):
-            #print(f"Document {i}")
-            #wrap_and_print(doc, max_line_width=60)
 
 def wrap_and_print(text, max_line_width):
-    lines = text.split('\n')  # Split into existing lines if any
+    lines = text.split("\n")  # Split into existing lines if any
     for line in lines:
         if len(line) > max_line_width:
-            words = line.split(' ')
+            words = line.split(" ")
             current_line = ""
             for word in words:
                 if len(current_line + " " + word) > max_line_width:
@@ -362,13 +378,46 @@ def wrap_and_print(text, max_line_width):
         else:
             print(line)
 
-if __name__ == "__main__":
-    generate_answer()
+
+def interactive_qa(llm_reader, document_vector_store):
+    """Provides a continuous interactive interface for user questions, saving conversation history."""
+
+    print("""## Interactive Questions & Answers
+
+This interface allows you to ask questions and receive answers. The conversation history is automatically saved in memory.""")
+
+    conversation_history = []  # Store conversation history
+
+    while True:
+        user_question = input("Ask your question (or type 'quit' to exit): ")
+
+        if user_question.lower() == "quit":
+            print("Exiting interactive mode.")
+            break
+
+        conversation_history.append(f"You: {user_question}")
+
+        print("Generating answer...")
+        answer, relevant_docs = answer_with_rag(
+            user_question, llm_reader, document_vector_store
+        )
+
+        conversation_history.append(f"Bard: {answer}")
+
+        # Print conversation turn (without history)
+        print(f"\nYou: {user_question}")
+        wrap_and_print(answer, max_line_width=100)  # Adjust line width as desired
+
+        # Optionally clear output (commented out, not used here)
+        # ipd.clear_output(wait=True)
+
+    # Print final conversation history after exiting the loop
+    print("\nConversation History:")
+    for turn in conversation_history:
+        print(turn)
+
+
+# Assuming you have llm_reader, document_vector_store, and prompt_template_rag defined
+interactive_qa(llm_reader, document_vector_store)
 ```
-
-![Flow Chart](./Images/synopsis.JPG)
-
----
-
-![Flow Chart](./Images/trump_question.JPG)
 
